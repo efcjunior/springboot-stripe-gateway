@@ -8,7 +8,7 @@
 		<version>3.5.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>devcunha</groupId>
+	<groupId>devcunha.springboot</groupId>
 	<artifactId>springboot-stripe-gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springboot-stripe-gateway</name>
@@ -28,6 +28,7 @@
 	</scm>
 	<properties>
 		<java.version>25</java.version>
+        <stripe.version>29.0.0</stripe.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -51,7 +52,15 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+
+        <!-- SDK Stripe -->
+        <dependency>
+            <groupId>com.stripe</groupId>
+            <artifactId>stripe-java</artifactId>
+            <version>${stripe.version}</version>
+        </dependency>
+
+    </dependencies>
 
 	<build>
 		<plugins>

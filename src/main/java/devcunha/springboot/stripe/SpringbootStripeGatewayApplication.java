@@ -1,4 +1,4 @@
-package devcunha.springboot_stripe_gateway;
+package devcunha.springboot.stripe;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
