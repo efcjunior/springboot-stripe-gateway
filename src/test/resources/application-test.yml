@@ -1,2 +1,2 @@
 stripe:
-  apiKey:
+  api-key: ${STRIPE_SECRET_KEY}

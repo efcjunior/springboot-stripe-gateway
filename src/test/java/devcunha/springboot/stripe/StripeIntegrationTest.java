@@ -3,8 +3,9 @@ package devcunha.springboot.stripe;
 import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
 import com.stripe.model.Account;
+import devcunha.springboot.stripe.config.StripeProperties;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
@@ -14,17 +15,17 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 @ActiveProfiles("test")
 class StripeIntegrationTest {
 
-    @Value("${stripe.apiKey}")
-    private String stripeApiKey;
+    @Autowired
+    private StripeProperties stripeProperties;
 
 	@Test
 	void printApiKey() {
-        System.out.println("Stripe Key = " + stripeApiKey);
+        System.out.println("Stripe Key = " + stripeProperties.getApiKey());
 	}
 
     @Test
     void testConnection() throws StripeException {
-        Stripe.apiKey = stripeApiKey;
+        Stripe.apiKey = stripeProperties.getApiKey();
 
         Account account = Account.retrieve();
 

@@ -3,4 +3,5 @@ spring:
     name: springboot-stripe-gateway
 
 stripe:
-  apiKey:
+  api-key: ${STRIPE_SECRET_KEY}
+  platform-account-id: ${STRIPE_PLATFORM_ACCOUNT_ID}
