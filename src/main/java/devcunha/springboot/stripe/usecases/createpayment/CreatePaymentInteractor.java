@@ -1,17 +1,14 @@
-package devcunha.springboot.stripe.service;
+package devcunha.springboot.stripe.usecases.createpayment;
 
-import com.stripe.StripeClient;
-import devcunha.springboot.stripe.config.StripeProperties;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class ServiceDemo {
+public class CreatePaymentInteractor {
 
     private final String stripeAccountId;
 
